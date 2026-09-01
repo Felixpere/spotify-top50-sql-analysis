@@ -25,7 +25,7 @@ We used SQL aggregations and visual analysis to test and support these hypothese
 
 ##  Data Cleaning & Preparation
 
-Performed in `spotify_proyect_clean_04.ipynb` using Python (pandas):
+Performed in `sql-spotify-top50/spotify_proyect_clean-06.ipynb` using Python (pandas):
 
 - Renamed columns to `snake_case`.
 - Cleaned `track_name` of special characters using regex.
@@ -37,14 +37,14 @@ Performed in `spotify_proyect_clean_04.ipynb` using Python (pandas):
 
 ##  Database Structure
 
-Implemented in MySQL using `project_spotify_tables.sql`.
+Implemented in MySQL using `project spotify tables.sql`, with the analysis queries in `sql-spotify-top50/Spotify_Mysql_queries.sql`.
 
 **Tables:**
 - `artists (artist_id, artist_name)`
 - `genres (genre_id, genre_name)`
 - `track (track_id, track_name, artist_id, genre_id, bpm, energy, valence, etc.)`
 
-**ERD available in:** `docs/erd_diagram.png`
+**ERD available in:** `sql-spotify-top50/RDE.png`
 
 Relational integrity enforced via foreign key constraints.
 
@@ -86,40 +86,19 @@ SQL queries performed:
 ##  Project Structure
 
 ```
-project-root/
-│
-├── data/
-│   ├── top50.csv
-│   ├── artists.csv
-│   ├── genres.csv
-│   └── tracks.csv
-│
-├── notebooks/
-│   └── spotify_proyect_clean_04.ipynb
-│
-├── sql/
-│   └── project_spotify_tables.sql
-│
-├── docs/
-│   └── erd_diagram.png
-│
-└── README.md
+.
+├── top50.csv                                     # source dataset (Kaggle, Top 50 2019)
+├── project spotify tables.sql                    # relational schema (MySQL)
+└── sql-spotify-top50/
+    ├── spotify_proyect_clean-06.ipynb            # cleaning, EDA and visualisations
+    ├── Spotify_Mysql_queries.sql                 # analysis queries
+    ├── RDE.png                                   # entity-relationship diagram
+    ├── common genres valance danceability.csv    # query output
+    ├── most popular tracks energy_danceability.csv
+    └── high popular tracks dominant genres based on avarage energy , popularity and danceability.csv
 ```
 
 > This structure ensures reproducibility and separation of concerns between cleaning, analysis, and database scripts.
-
----
-
-##  Rubric Alignment
-
--  Clear business problem + 3 hypotheses
--  Full data cleaning and justification
--  Functional database with foreign keys
--  5+ SQL queries with insights
--  4+ visualizations with interpretation
--  Well-structured Git repo with daily commits
--  Comprehensive README for reproducibility
--  Google Slides presentation included
 
 ---
 
