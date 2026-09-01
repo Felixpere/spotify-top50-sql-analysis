@@ -1,0 +1,46 @@
+# ===== Credenciales y secretos =====
+.env
+.env.local
+.env.production
+.env.development
+secrets.json
+credentials.json
+service_account*.json
+config.local.*
+*.pem
+*.key
+id_rsa*
+
+# Sesiones de Telethon / Telegram - equivalen a estar logueado
+*.session
+*.session-journal
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+*.egg-info/
+.pytest_cache/
+
+# ===== Datos pesados / intermedios =====
+data/raw/
+data/interim/
+*.db
+*.sqlite
+*.sqlite3
+*.parquet
+*.pkl
+
+# Descomenta si los CSV son grandes; deja fuera los datasets limpios que sí quieras publicar
+# *.csv
+# !data/clean/*.csv
+
+# ===== Sistema / editor =====
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
